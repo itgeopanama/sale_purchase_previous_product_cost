@@ -31,7 +31,7 @@ class SaleOrderLine(models.Model):
             if each.product_id:
                 each.product_id.write({'order_partner_id': each.order_id.partner_id.id})
 
-    sale_data = fields.Datetime(comodel_name='sale.order', string='Sale Date',
+    sale_data = fields.Datetime(comodel_name='sale.order', string='Fecha de Venta',
                                 related='order_id.date_order', store=True)
 
 
@@ -45,7 +45,7 @@ class PurchaseOrderLine(models.Model):
             if each.product_id:
                 each.product_id.write({'order_partner_id': each.order_id.partner_id.id})
 
-    purchase_data = fields.Datetime(comodel_name='purchase.order', string='Purchase Date',
+    purchase_data = fields.Datetime(comodel_name='purchase.order', string='Fecha de Compra',
                                     related='order_id.date_order', store=True)
 
 
