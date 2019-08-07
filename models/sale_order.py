@@ -62,7 +62,7 @@ class ProductTemplate(models.Model):
                                   ('order_partner_id', '=', self.order_partner_id.id)],
                                  order='create_date DESC')
         if not sale_lines:
-            raise Warning("No sales history found.!")
+            raise Warning("No hay ventas para este cliente.!")
         else:
             return {
                 'view_type': 'tree',
@@ -83,7 +83,7 @@ class ProductTemplate(models.Model):
                                                                  ('partner_id', '=', self.order_partner_id.id)],
                                                                 order='create_date DESC')
         if not purchase_lines:
-            raise Warning("No purchase history found.!")
+            raise Warning("No hay compras para este Proveedor.!")
         else:
             return {
                 'view_type': 'tree',
